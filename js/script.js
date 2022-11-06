@@ -45,5 +45,6 @@ $(function () {
         tasks[hourCount] = $(this).siblings("textarea").val();
         console.log(tasks);
         localStorage.setItem("tasks", JSON.stringify(tasks));
+        $(".popup").css("display", "flex").hide().fadeIn(1000).fadeOut(1000);
     });
 });

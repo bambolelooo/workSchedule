@@ -90,3 +90,16 @@ textarea {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+
+.popup {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 10vh;
+    transform: translate(20%, 50%);
+    width: 15vw;
+    background-color: #006c55;
+    color: white;
+    border-radius: 15px;
+}
