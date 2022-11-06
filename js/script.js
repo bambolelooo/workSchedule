@@ -6,6 +6,22 @@ $(function () {
         $("#currentDay").text(`${new Date()}`);
     }, 100);
 
+    let tasks = ["", "", "", "", "", "", "", "", ""];
+
+    try {
+        tasks = JSON.parse(localStorage.getItem("tasks"));
+    } catch {}
+
+    console.log(tasks);
+    for (let i = 0; i < 9; i++) {
+        $("textarea").eq(i).val(tasks[i]);
+    }
+    $(".saveBtn").click(function () {
+        let hourCount = Number($(this).parent().attr("id").slice(5)) - 9;
+        tasks[hourCount] = $(this).siblings("textarea").val();
+        console.log(tasks);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    });
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
