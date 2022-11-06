@@ -3,6 +3,7 @@
   <p align="center">
     Website containing schedule for optimising your work
     <br />
+    <a href="https://github.com/coding-boot-camp/crispy-octo-meme">Starter code taken from here</a>
     <br />
     <a href="https://bambolelooo.github.io/workSchedule/">Visit website</a>
   </p>
@@ -34,12 +35,11 @@
 
 ## About The Project
 
-Code quiz site contains:
+Work schedule site contains:
 
--   Quiz of with four sample questions
--   A timer that goes down by 5 seconds when the answer is not correct
--   Locally stored scoreboard with sorting by score
--   Cool wave svg from haikei
+-   Welcoming jumbotrone with current date
+-   Hourly named tiled for you TODOs
+-   All TODOs are locally stored
 
 ### Built With
 
