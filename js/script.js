@@ -1,7 +1,6 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-
 $(function () {
     let tasks;
     if (JSON.parse(localStorage.getItem("tasks"))) {
@@ -31,9 +30,8 @@ $(function () {
             </div>
     `);
     }
-
     setInterval(() => {
-        $("#currentDay").text(`${new Date()}`);
+        $("#currentDay").text(`${dayjs().format("ddd DD MMMM HH:mm:ss")}`);
     }, 100);
 
     console.log(tasks);
