@@ -32,7 +32,7 @@ $(function () {
     }
     setInterval(() => {
         $("#currentDay").text(`${dayjs().format("ddd DD MMMM HH:mm:ss")}`);
-    }, 100);
+    }, 200);
 
     console.log(tasks);
     for (let i = 0; i < 9; i++) {
