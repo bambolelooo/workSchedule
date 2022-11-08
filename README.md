@@ -48,6 +48,8 @@ Work schedule site contains:
 -   JavaScript
 
 ## Site layout
+![image](https://user-images.githubusercontent.com/63548697/200462258-a84bec4b-ff69-4747-bd98-f5ede46f5b59.png)
+![image](https://user-images.githubusercontent.com/63548697/200462347-2b2396d7-1d6c-4e2e-ad2b-cc70b9265555.png)
 
 <!-- CONTRIBUTING -->
 
