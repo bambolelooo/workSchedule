@@ -2,12 +2,17 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-    let tasks;
-    if (JSON.parse(localStorage.getItem("tasks"))) {
-        tasks = JSON.parse(localStorage.getItem("tasks"));
-    } else {
-        tasks = ["", "", "", "", "", "", "", "", ""];
-    }
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || {
+        9: "",
+        10: "",
+        11: "",
+        12: "",
+        13: "",
+        14: "",
+        15: "",
+        16: "",
+        17: "",
+    };
 
     // add divs to html whith current hour styling
     const d = new Date();
@@ -21,10 +26,9 @@ $(function () {
                     class="col-2 col-md-1 hour text-center py-3 d-flex align-items-center justify-content-center"
                 >
                     ${i > 12 ? `${i - 12}PM` : `${i}AM`}
-                </div>
-                <textarea class="col-8 col-md-10 description" rows="3">
-                </textarea>
-                <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+                </div><textarea class="col-8 col-md-10 description" rows="3">${
+                    tasks[i]
+                }</textarea><button class="btn saveBtn col-2 col-md-1" aria-label="save">
                     <i class="fas fa-save" aria-hidden="true"></i>
                 </button>
             </div>
@@ -35,11 +39,8 @@ $(function () {
     }, 200);
 
     console.log(tasks);
-    for (let i = 0; i < 9; i++) {
-        $("textarea").eq(i).val(tasks[i]);
-    }
     $(".saveBtn").click(function () {
-        let hourCount = Number($(this).parent().attr("id").slice(5)) - 9;
+        let hourCount = Number($(this).parent().attr("id").slice(5));
         tasks[hourCount] = $(this).siblings("textarea").val();
         console.log(tasks);
         localStorage.setItem("tasks", JSON.stringify(tasks));
