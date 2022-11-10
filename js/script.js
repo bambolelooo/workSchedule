@@ -38,11 +38,9 @@ $(function () {
         $("#currentDay").text(`${dayjs().format("ddd DD MMMM HH:mm:ss")}`);
     }, 200);
 
-    console.log(tasks);
     $(".saveBtn").click(function () {
-        let hourCount = Number($(this).parent().attr("id"));
-        tasks[`hour${hourCount}`] = $(this).siblings("textarea").val();
-        console.log(tasks);
+        let hourCount = $(this).parent().attr("id");
+        tasks["task" + hourCount] = $(this).siblings("textarea").val();
         localStorage.setItem("tasks", JSON.stringify(tasks));
         $(".popup").css("display", "flex").hide().fadeIn(1000).fadeOut(1000);
     });
